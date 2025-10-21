@@ -10,7 +10,7 @@
 
         <DebugType>portable</DebugType>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        
+
         <GenerateKSPAssemblyAttribute>true</GenerateKSPAssemblyAttribute>
         <GenerateKSPAssemblyDependencyAttributes>true</GenerateKSPAssemblyDependencyAttributes>
 
@@ -68,7 +68,8 @@
 
         <!-- The path to the managed directory from the KSP root -->
         <ManagedRelativePath Condition="$([MSBuild]::IsOsPlatform('Windows'))">KSP_x64_Data\Managed</ManagedRelativePath>
-        <ManagedRelativePath Condition="$([MSBuild]::IsOsPlatform('OSX'))">KSP.app\Contents\Resources\Data\Managed</ManagedRelativePath>
+        <ManagedRelativePath Condition="$([MSBuild]::IsOsPlatform('OSX'))">
+            KSP.app\Contents\Resources\Data\Managed</ManagedRelativePath>
         <ManagedRelativePath Condition="$([MSBuild]::IsOsPlatform('Linux'))">KSP_Data\Managed</ManagedRelativePath>
 
         <!-- The path to the KSP executable from the KSP root -->
@@ -77,8 +78,10 @@
         <KSPExecutable Condition="$([MSBuild]::IsOsPlatform('Linux'))">KSP.x86_64</KSPExecutable>
 
         <!-- Directories to check for the default steam installation -->
-        <SteamKSPRoot Condition="($([MSBuild]::IsOsPlatform('Windows')))">C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program</SteamKSPRoot>
-        <SteamKSPRoot Condition="($([MSBuild]::IsOsPlatform('OSX')))">$(HOME)/Library/Application Support/Steam/steamapps/common/Kerbal Space Program</SteamKSPRoot>
+        <SteamKSPRoot Condition="($([MSBuild]::IsOsPlatform('Windows')))">C:\Program Files
+            (x86)\Steam\steamapps\common\Kerbal Space Program</SteamKSPRoot>
+        <SteamKSPRoot Condition="($([MSBuild]::IsOsPlatform('OSX')))">$(HOME)/Library/Application
+            Support/Steam/steamapps/common/Kerbal Space Program</SteamKSPRoot>
 
         <RepoRootPath>$(ProjectRootDir)</RepoRootPath>
         <BinariesOutputRelativePath>GameData/$(GameDataSubDir)/Plugins</BinariesOutputRelativePath>
@@ -151,10 +154,15 @@
         </Reference>
     </ItemGroup>
 
-    <!-- KSPMCF Common Dependencies -->
+    <!-- KSPMCF Patch Assembly Properties -->
     <!--
         This way these do not need to be copied to each mod patch project.
     -->
+    <PropertyGroup Condition=" '$(KSPMCFPlugin)' == 'true' ">
+        <Description>KSPCommunityModFixes patches for $(MSBuildProjectName.Split('.')[1])</Description>
+    </PropertyGroup>
+
+
     <ItemGroup Condition=" '$(KSPMCFPlugin)' == 'true' ">
         <ProjectReference
             Include="$(SolutionDir)/src/KSPCommunityModFixes/KSPCommunityModFixes.csproj">

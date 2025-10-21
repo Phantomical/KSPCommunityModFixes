@@ -1,7 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>KSPCommunityModFixes patches for $(ProjectName.Split('.')[1])</Description>
-
     <KSPMCFPlugin>true</KSPMCFPlugin>
   </PropertyGroup>
 
