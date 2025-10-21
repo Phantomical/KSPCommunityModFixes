@@ -17,5 +17,12 @@
       <KSPAssemblyName>Sandcastle</KSPAssemblyName>
       <KSPAssemblyVersion>1.0</KSPAssemblyVersion>
     </Reference>
+
+    <Reference Include="KSPPluginLoader.dll">
+      <HintPath>$(DepSet1)\000_PluginLoader\Plugins\KSPPluginLoader.dll</HintPath>
+      <Private>false</Private>
+      <KSPAssemblyName>KSPPluginLoader</KSPAssemblyName>
+      <KSPAssemblyVersion>1.0.0</KSPAssemblyVersion>
+    </Reference>
   </ItemGroup>
 </Project>
