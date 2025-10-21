@@ -28,7 +28,7 @@
       <Download>https://github.com/Phantomical//releases/latest</Download>
     </KSPVersionFile>
 
-    <InternalsVisibleTo Include="KSPCommunityModFixes.Kerbalism" />
+    <InternalsVisibleTo Include="KSPCommunityModFixes.MechJeb2" />
   </ItemGroup>
 
   <!--
