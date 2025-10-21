@@ -1,14 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>Use engines in time warp or in the background</Description>
-
-    <DebugType>portable</DebugType>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-
-    <GenerateKSPAssemblyAttribute>true</GenerateKSPAssemblyAttribute>
-    <GenerateKSPAssemblyDependencyAttributes>true</GenerateKSPAssemblyDependencyAttributes>
-
-    <KSPBinaryType>binary</KSPBinaryType>
+    <Description>Community Fixes for KSP Mods</Description>
   </PropertyGroup>
 
   <ItemGroup>

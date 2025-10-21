@@ -3,12 +3,16 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <!-- The version used for all libraries in this project. -->
-        <Version>0.3.0</Version>
+        <Version>0.1.0</Version>
 
         <TargetFramework>net481</TargetFramework>
         <LangVersion>preview</LangVersion>
 
         <DebugType>portable</DebugType>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        
+        <GenerateKSPAssemblyAttribute>true</GenerateKSPAssemblyAttribute>
+        <GenerateKSPAssemblyDependencyAttributes>true</GenerateKSPAssemblyDependencyAttributes>
 
         <!-- Generate an XML documentation file so that others can see the doc comments -->
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -145,5 +149,28 @@
             <Name>Mono.Cecil</Name>
             <Private>False</Private>
         </Reference>
+    </ItemGroup>
+
+    <!-- KSPMCF Common Dependencies -->
+    <!--
+        This way these do not need to be copied to each mod patch project.
+    -->
+    <ItemGroup Condition=" '$(KSPMCFPlugin)' == 'true' ">
+        <ProjectReference
+            Include="$(SolutionDir)/src/KSPCommunityModFixes/KSPCommunityModFixes.csproj">
+            <KSPAssemblyName>KSPCommunityModFixes</KSPAssemblyName>
+            <KSPAssemblyVersion>$(Version)</KSPAssemblyVersion>
+            <Private>false</Private>
+        </ProjectReference>
+
+        <Reference Include="0Harmony.dll">
+            <HintPath>$(DepSet1)\000_Harmony\0Harmony.dll</HintPath>
+            <Private>false</Private>
+            <CKANIdentifier>Harmony2</CKANIdentifier>
+            <KSPAssemblyName>HarmonyKSP</KSPAssemblyName>
+            <KSPAssemblyVersion>1.0.0</KSPAssemblyVersion>
+        </Reference>
+
+        <AssemblyAttribute Include="KSPCommunityModFixes.KSPCommunityModFixesAssembly" />
     </ItemGroup>
 </Project>

@@ -2,50 +2,22 @@
   <PropertyGroup>
     <Description>KSPCommunityModFixes patches for $(ProjectName.Split('.')[1])</Description>
 
-    <DebugType>portable</DebugType>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-
-    <GenerateKSPAssemblyAttribute>true</GenerateKSPAssemblyAttribute>
-    <GenerateKSPAssemblyDependencyAttributes>true</GenerateKSPAssemblyDependencyAttributes>
-
     <KSPMCFPlugin>true</KSPMCFPlugin>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="JsonPoke" Version="1.2.0" />
-
-    <ProjectReference
-      Include="$(ProjectDir)/../KSPCommunityModFixes/KSPCommunityModFixes.csproj">
-      <KSPAssemblyName>KSPCommunityModFixes</KSPAssemblyName>
-      <KSPAssemblyVersion>$(Version)</KSPAssemblyVersion>
-      <Private>false</Private>
-    </ProjectReference>
-
-    <Reference Include="0Harmony.dll">
-      <HintPath>$(DepSet1)\000_Harmony\0Harmony.dll</HintPath>
-      <Private>false</Private>
-      <CKANIdentifier>Harmony2</CKANIdentifier>
-      <KSPAssemblyName>HarmonyKSP</KSPAssemblyName>
-      <KSPAssemblyVersion>1.0.0</KSPAssemblyVersion>
-    </Reference>
+    <!--
+      Add mod-specific dependencies here. The common dependencies (on KSPMCF
+      and Harmony) are handled in Directory.Build.Props and do not need to
+      be added here.
+    -->
 
     <Reference Include="MechJeb2.dll">
       <HintPath>$(DepSet1)\MechJeb2\Plugins\MechJeb2.dll</HintPath>
       <Private>false</Private>
       <CKANIdentifier>MechJeb2</CKANIdentifier>
       <KSPAssemblyName>MechJeb2</KSPAssemblyName>
-      <KSPAssemblyVersion>1.0.0</KSPAssemblyVersion>
+      <KSPAssemblyVersion>2.5.0</KSPAssemblyVersion>
     </Reference>
-
-    <KSPVersionFile Include=".">
-      <Destination>$(GameDataOutDir)/KSPCommunityModFixes.version</Destination>
-      <URL>
-        https://github.com/Phantomical/KSPCommunityModFixes/releases/latest/download/KSPCommunityModFixes.version</URL>
-      <Download>https://github.com/Phantomical//releases/latest</Download>
-    </KSPVersionFile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <AssemblyAttribute Include="KSPCommunityModFixes.KSPCommunityModFixesAssembly" />
   </ItemGroup>
 </Project>
