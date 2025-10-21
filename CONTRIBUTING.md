@@ -35,6 +35,9 @@ Once you have done that you can create a PR to add your patch!
   2. Remove all source files from the new project.
   3. Replace any mod dependencies with the one for your new mod.
   4. Create a new file and start writing your patch class.
+* You can add new dependencies to the dependency lists under `deps/*.ckan`.
+  If it conflicts with another mod in the dependency list then create a new
+  `depsetN.ckan` file and add it there.
 
 When writing a patch make sure to follow these conventions:
 * Each patch goes into its own class.
