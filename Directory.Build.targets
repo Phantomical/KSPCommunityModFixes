@@ -4,14 +4,9 @@
         <BinariesOutputPath>$(RepoRootPath)/$(BinariesOutputRelativePath)</BinariesOutputPath>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(KSPBinaryType)' == 'plugin' And '$(DirectlyLoadPlugins)' == true ">
-        <KSPBinaryType>binary</KSPBinaryType>
-    </PropertyGroup>
-
     <Target
         Name="CopyBinariesToRepo"
         AfterTargets="CopyFilesToOutputDirectory"
-        Condition=" '$(KSPBinaryType)' == 'binary' "
     >
         <ItemGroup>
             <BinariesToCopy Include="$(TargetDir)/**" />

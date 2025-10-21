@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Description>Use engines in time warp or in the background</Description>
+    <Description>KSPCommunityModFixes patches for $(ProjectName.Split('.')[1])</Description>
 
     <DebugType>portable</DebugType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -8,7 +8,7 @@
     <GenerateKSPAssemblyAttribute>true</GenerateKSPAssemblyAttribute>
     <GenerateKSPAssemblyDependencyAttributes>true</GenerateKSPAssemblyDependencyAttributes>
 
-    <KSPBinaryType>binary</KSPBinaryType>
+    <KSPMCFPlugin>true</KSPMCFPlugin>
   </PropertyGroup>
 
   <ItemGroup>

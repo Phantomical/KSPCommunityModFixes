@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 using HarmonyLib;
@@ -9,7 +8,7 @@ namespace KSPCommunityModFixes;
 /// <summary>
 /// Helper methods for doing common patch tasks.
 /// </summary>
-internal static class Tools
+public static class Tools
 {
     /// <summary>
     /// Extract the method info from a lambda that makes a call to a function.

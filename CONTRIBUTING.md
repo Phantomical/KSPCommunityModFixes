@@ -1,17 +1,50 @@
 # Contributing
 
-## Bug Reports
-If you are reporting a bug please make sure to include KSP.log and/or Player.log
-along with your current mod list. For best results, follow the instructions at
-[How to Get Support][0].
+- [Building the Project](#building-the-project)
+  - [Installing Dependencies](#installing-dependencies)
+  - [Building](#building)
+  - [Formatting](#formatting)
 
-[0]: https://forum.kerbalspaceprogram.com/topic/163863-how-to-get-support/
+# Submitting a New Patch
+## Prerequisites
+* Find a specific method in a mod that can be optimized.
+* Create a PR that fixes that specific issue and submit it for that mod. This way
+  we can track when issues get fixed upstream and remove them KSPMCF. As a bonus,
+  this helps the KSP ecosystem improve, one PR at a time.
 
+Once you have done that you can create a PR to add your patch!
+
+> [!INFO]
+> There are some exceptions to the rule about creating a PR before creating a
+> patch. The current list of exceptions is:
+> - MechJeb2 CKAN version. The dev branch of mechjeb has been being developed
+>   for multiple years since the last release so backports of changes to the
+>   CKAN version do not need a PR to the mechjeb repo.
+>
+> If you have another reason that you think there's no reason to submit a PR
+> with your patch then please include an explanation in your PR to KSPMCF.
+
+## Writing a Patch
+* We use Harmony2 in order to patch methods at runtime. Check out
+  [the harmony documentation](https://harmony.pardeike.net/articles/intro.html)
+  in order to see what you can do.
+* Each mod has its own project. If you want to add a patch for a mod that
+  doesn't have any yet then:
+  1. Copy an existing project (e.g. `KSPCommunityModFixes.MechJeb2`) and rename
+     it to `KSPCommunityModFixes.<ModName>`.
+  2. Remove all source files from the new project.
+  3. Replace any mod dependencies with the one for your new mod.
+  4. Create a new file and start writing your patch class.
+
+When writing a patch make sure to follow these conventions:
+* Each patch goes into its own class.
+* Patch classes are named `<TargetType>_<Method>_<Patch>`.
+
+# Building the Project
 ## Installing Dependencies
-Background Thrust has integrations with some other mods. Some of these conflict
-so they cannot all be installed in the same installation. As such, there is a
-script that installs these dependencies into a few fake CKAN installs that you
-will need to run before you can build anything.
+KSPCommunityModFixes needs a whole bunch of other mods installed to build. It
+isn't really useful to have you install these into a KSP install, so we have
+provided a script that takes care of that for you.
 
 On Windows, run
 ```powershell
@@ -21,7 +54,7 @@ Set-ExecutionPolicy -Scope Process Bypass
 
 On Linux/MacOS run
 ```bash
-./setup-deps.sh
+./setup-deps.sh --ckan command/to/run/ckan
 ```
 
 These must be run in the repository root. They will create some fake ckan
