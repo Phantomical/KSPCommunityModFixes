@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Use engines in time warp or in the background</Description>
+
+    <DebugType>portable</DebugType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <GenerateKSPAssemblyAttribute>true</GenerateKSPAssemblyAttribute>
+    <GenerateKSPAssemblyDependencyAttributes>true</GenerateKSPAssemblyDependencyAttributes>
+
+    <KSPBinaryType>binary</KSPBinaryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JsonPoke" Version="1.2.0" />
+
+    <ProjectReference
+      Include="$(ProjectDir)/../KSPCommunityModFixes/KSPCommunityModFixes.csproj">
+      <KSPAssemblyName>KSPCommunityModFixes</KSPAssemblyName>
+      <KSPAssemblyVersion>$(Version)</KSPAssemblyVersion>
+      <Private>false</Private>
+    </ProjectReference>
+
+    <Reference Include="0Harmony.dll">
+      <HintPath>$(DepSet1)\000_Harmony\0Harmony.dll</HintPath>
+      <Private>false</Private>
+      <CKANIdentifier>Harmony2</CKANIdentifier>
+      <KSPAssemblyName>HarmonyKSP</KSPAssemblyName>
+      <KSPAssemblyVersion>1.0.0</KSPAssemblyVersion>
+    </Reference>
+
+    <Reference Include="MechJeb2.dll">
+      <HintPath>$(DepSet1)\MechJeb2\Plugins\MechJeb2.dll</HintPath>
+      <Private>false</Private>
+      <CKANIdentifier>MechJeb2</CKANIdentifier>
+      <KSPAssemblyName>MechJeb2</KSPAssemblyName>
+      <KSPAssemblyVersion>1.0.0</KSPAssemblyVersion>
+    </Reference>
+
+    <KSPVersionFile Include=".">
+      <Destination>$(GameDataOutDir)/KSPCommunityModFixes.version</Destination>
+      <URL>
+        https://github.com/Phantomical/KSPCommunityModFixes/releases/latest/download/KSPCommunityModFixes.version</URL>
+      <Download>https://github.com/Phantomical//releases/latest</Download>
+    </KSPVersionFile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="KSPCommunityModFixes.KSPCommunityModFixesAssembly" />
+  </ItemGroup>
+</Project>

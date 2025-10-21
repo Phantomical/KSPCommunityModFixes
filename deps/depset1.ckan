@@ -10,7 +10,9 @@
     "license": "MIT",
     "kind": "metapackage",
     "depends": [
-        { "name": "Harmony2" }
+        { "name": "Harmony2" },
+        { "name": "MechJeb2" },
+        { "name": "KSPPluginLoader" }
     ],
     "recommends": [
         { "name": "KSPCommunityFixes" },
