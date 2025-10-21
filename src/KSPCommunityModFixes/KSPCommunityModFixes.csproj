@@ -13,6 +13,13 @@
 
   <ItemGroup>
     <PackageReference Include="JsonPoke" Version="1.2.0" />
+    
+    <Reference Include="$(DepSet1)\ModuleManager.*.dll">
+      <Private>false</Private>
+      <CKANIdentifier>ModuleManager</CKANIdentifier>
+      <KSPAssemblyName>ModuleManager</KSPAssemblyName>
+      <KSPAssemblyVersion>4.2.3</KSPAssemblyVersion>
+    </Reference>
 
     <Reference Include="0Harmony.dll">
       <HintPath>$(DepSet1)\000_Harmony\0Harmony.dll</HintPath>

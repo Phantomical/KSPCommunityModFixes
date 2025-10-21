@@ -24,7 +24,7 @@ internal static class ValueInfoItem_Ctor
     //
     // There doesn't seem to be a better way to track this since all the
     // versions appear to be identical in each case.
-    static bool Prepare() => AccessTools.Field(typeof(ValueInfoItem), "_getterCache") is null;
+    static bool Prepare() => !MechJebUtils.IsDevBranch();
 
     static IEnumerable<CodeInstruction> Transpiler(
         IEnumerable<CodeInstruction> instructions,
