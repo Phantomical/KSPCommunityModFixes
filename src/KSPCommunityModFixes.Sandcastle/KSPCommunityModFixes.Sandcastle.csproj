@@ -13,8 +13,8 @@
     <Reference Include="WildBlueCore.dll">
       <HintPath>$(DepSet1)\WildBlueIndustries\00WildBlueCore\Plugins\WildBlueCore.dll</HintPath>
       <Private>false</Private>
-      <CKANIdentifier>Sandcastle</CKANIdentifier>
-      <KSPAssemblyName>Sandcastle</KSPAssemblyName>
+      <CKANIdentifier>WilBlueCore</CKANIdentifier>
+      <KSPAssemblyName>WildBlueCore</KSPAssemblyName>
       <KSPAssemblyVersion>0.0.0</KSPAssemblyVersion>
     </Reference>
 
