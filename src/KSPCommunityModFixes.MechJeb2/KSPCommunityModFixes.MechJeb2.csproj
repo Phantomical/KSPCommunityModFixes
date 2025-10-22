@@ -15,7 +15,7 @@
       <Private>false</Private>
       <CKANIdentifier>MechJeb2</CKANIdentifier>
       <KSPAssemblyName>MechJeb2</KSPAssemblyName>
-      <KSPAssemblyVersion>2.5</KSPAssemblyVersion>
+      <KSPAssemblyVersion>2.5.0</KSPAssemblyVersion>
     </Reference>
   </ItemGroup>
 </Project>

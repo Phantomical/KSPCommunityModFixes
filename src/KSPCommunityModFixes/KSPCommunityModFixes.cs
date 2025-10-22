@@ -20,8 +20,11 @@ internal class KSPCommunityModFixes : MonoBehaviour
 
     void OnMMPostPatch()
     {
-        var configs = GameDatabase.Instance.GetConfigs("KSPCMF_CONFIG");
-        var config = configs?[0]?.config ?? new ConfigNode();
+        var configs = GameDatabase.Instance.GetConfigs("KSPCommunityModFixes");
+        ConfigNode config = null;
+        if (configs is not null && configs.Length != 0)
+            config = configs[0]?.config;
+        config ??= new();
 
         foreach (var loadedAssembly in AssemblyLoader.loadedAssemblies)
         {

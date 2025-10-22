@@ -15,7 +15,11 @@ namespace KSPCommunityModFixes.MechJeb2;
 ///
 /// This patch adds a cache that can be used instead.
 /// </summary>
-[HarmonyPatch(typeof(ValueInfoItem), MethodType.Constructor)]
+[HarmonyPatch(
+    typeof(ValueInfoItem),
+    MethodType.Constructor,
+    [typeof(object), typeof(MemberInfo), typeof(ValueInfoItemAttribute)]
+)]
 internal static class ValueInfoItem_Ctor
 {
     static readonly Dictionary<MemberInfo, Func<object, object>> GetterCache = [];
@@ -40,6 +44,7 @@ internal static class ValueInfoItem_Ctor
             .ThrowIfInvalid("Unable to find store to timeDecimalPlaces field")
             .Advance(1)
             .Insert(
+                new CodeInstruction(OpCodes.Ldarg_0),
                 new CodeInstruction(OpCodes.Ldarg_1),
                 new CodeInstruction(OpCodes.Ldarg_2),
                 new CodeInstruction(

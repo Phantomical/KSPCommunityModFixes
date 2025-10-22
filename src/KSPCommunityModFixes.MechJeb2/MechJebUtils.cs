@@ -7,5 +7,5 @@ internal static class MechJebUtils
 {
     // TODO: There has got to be a better way to figure this out.
     internal static bool IsDevBranch() =>
-        AccessTools.Field(typeof(ValueInfoItem), "_getterCache") is null;
+        AccessTools.Field(typeof(ValueInfoItem), "_getterCache") is not null;
 }

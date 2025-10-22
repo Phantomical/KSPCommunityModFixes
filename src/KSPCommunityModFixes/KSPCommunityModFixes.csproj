@@ -10,7 +10,7 @@
       <Private>false</Private>
       <CKANIdentifier>ModuleManager</CKANIdentifier>
       <KSPAssemblyName>ModuleManager</KSPAssemblyName>
-      <KSPAssemblyVersion>4.2.3</KSPAssemblyVersion>
+      <KSPAssemblyVersion>0.0.0</KSPAssemblyVersion>
     </Reference>
 
     <Reference Include="0Harmony.dll">

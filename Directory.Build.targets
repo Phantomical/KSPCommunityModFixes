@@ -53,19 +53,7 @@
                 <KSPAssemblyVersion Condition="%(Reference.KSPAssemblyVersion) == ''">0.0.0</KSPAssemblyVersion>
             </Reference>
         </ItemGroup>
-        <ItemGroup Condition="$([System.String]::Copy('%(Reference.KSPAssemblyVersion)').Split('.').Length) &lt;= 2">
-            <AssemblyAttribute Include="KSPAssemblyDependency"
-                Condition="%(Reference.KSPAssemblyName) != ''">
-                <_Parameter1>%(Reference.KSPAssemblyName)</_Parameter1>
-                <_Parameter1_TypeName>System.String</_Parameter1_TypeName>
-                <_Parameter2>$([System.String]::Copy('%(Reference.KSPAssemblyVersion)').Split('.')[0])</_Parameter2>
-                <_Parameter2_TypeName>System.Int32</_Parameter2_TypeName>
-                <_Parameter3>$([System.String]::Copy('%(Reference.KSPAssemblyVersion)').Split('.')[1])</_Parameter3>
-                <_Parameter3_TypeName>System.Int32</_Parameter3_TypeName>
-            </AssemblyAttribute>
-        </ItemGroup>
-
-        <ItemGroup Condition="$([System.String]::Copy('%(Reference.KSPAssemblyVersion)').Split('.').Length) &gt; 2">
+        <ItemGroup>
             <AssemblyAttribute Include="KSPAssemblyDependency"
                 Condition="%(Reference.KSPAssemblyName) != ''">
                 <_Parameter1>%(Reference.KSPAssemblyName)</_Parameter1>
