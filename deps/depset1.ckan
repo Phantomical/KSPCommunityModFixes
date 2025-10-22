@@ -11,8 +11,9 @@
     "kind": "metapackage",
     "depends": [
         { "name": "Harmony2" },
+        { "name": "KSPPluginLoader" },
         { "name": "MechJeb2" },
-        { "name": "KSPPluginLoader" }
+        { "name": "Sandcastle" }
     ],
     "recommends": [
         { "name": "KSPCommunityFixes" },

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <KSPMCFPlugin>true</KSPMCFPlugin>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Add mod-specific dependencies here. The common dependencies (on KSPMCF
+      and Harmony) are handled in Directory.Build.Props and do not need to
+      be added here.
+    -->
+
+    <Reference Include="WildBlueCore.dll">
+      <HintPath>$(DepSet1)\WildBlueIndustries\00WildBlueCore\Plugins\WildBlueCore.dll</HintPath>
+      <Private>false</Private>
+      <CKANIdentifier>WilBlueCore</CKANIdentifier>
+      <KSPAssemblyName>WildBlueCore</KSPAssemblyName>
+      <KSPAssemblyVersion>0.0.0</KSPAssemblyVersion>
+    </Reference>
+
+    <Reference Include="Sandcastle.dll">
+      <HintPath>$(DepSet1)\WildBlueIndustries\Sandcastle\Plugin\Sandcastle.dll</HintPath>
+      <Private>false</Private>
+      <CKANIdentifier>Sandcastle</CKANIdentifier>
+      <KSPAssemblyName>Sandcastle</KSPAssemblyName>
+      <KSPAssemblyVersion>0.0.0</KSPAssemblyVersion>
+    </Reference>
+  </ItemGroup>
+</Project>

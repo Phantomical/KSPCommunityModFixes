@@ -9,3 +9,5 @@ depends:
     min_version: 4.2.3
   - name: Harmony2
     min_version: 2.2.1
+  - name: KSPPluginLoader
+    min_version: 1.0.0
