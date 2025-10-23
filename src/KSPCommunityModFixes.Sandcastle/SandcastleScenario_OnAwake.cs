@@ -22,10 +22,12 @@ static class SandcastleScenario_OnAwake_Patch
         var method = Tools.GetMethodInfo(() => InventoryUtils.FindThumbnailPaths());
 
         var matcher = new CodeMatcher(instructions, gen);
-        matcher.Repeat(matcher =>
-        {
-            matcher.MatchStartForward(new CodeMatch(OpCodes.Call, method)).RemoveInstruction();
-        });
+        matcher
+            .MatchStartForward(new CodeMatch(OpCodes.Call, method))
+            .Repeat(matcher =>
+            {
+                matcher.RemoveInstruction();
+            });
 
         return matcher.Instructions();
     }
